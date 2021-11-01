@@ -1,0 +1,125 @@
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:44:39,638 [32mINFO[m [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [RestTemplateTest], using SpringBootContextLoader
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:44:39,647 [32mINFO[m [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [RestTemplateTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:44:39,648 [32mINFO[m [main][AnnotationConfigContextLoaderUtils.java:83] - Could not detect default configuration classes for test class [RestTemplateTest]: RestTemplateTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:45:46,173 [32mINFO[m [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [RestTemplateTest], using SpringBootContextLoader
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:45:46,182 [32mINFO[m [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [RestTemplateTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:45:46,183 [32mINFO[m [main][AnnotationConfigContextLoaderUtils.java:83] - Could not detect default configuration classes for test class [RestTemplateTest]: RestTemplateTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:46:37,329 [32mINFO[m [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [RestTemplateTest], using SpringBootContextLoader
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:46:37,335 [32mINFO[m [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [RestTemplateTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:46:37,336 [32mINFO[m [main][AnnotationConfigContextLoaderUtils.java:83] - Could not detect default configuration classes for test class [RestTemplateTest]: RestTemplateTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,697 [32mINFO[m [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [RestTemplateTest], using SpringBootContextLoader
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,703 [32mINFO[m [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [RestTemplateTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,781 [32mINFO[m [main][AbstractTestContextBootstrapper.java:248] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,788 [32mINFO[m [main][AbstractTestContextBootstrapper.java:177] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5b247367, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@268f106e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6e9a5ed8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7e057f43, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6c284af, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5890e879, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6440112d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@31ea9581, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@231f98ef, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7c137fd5]
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,971 [32mINFO[m [main][:] - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,973 [32mINFO[m [main][WelcomeLogoApplicationListener.java:63] - 
+
+ :: Dubbo Spring Boot (v2.7.1) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.7.3) : https://github.com/apache/incubator-dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:53,977 [32mINFO[m [main][OverrideDubboConfigApplicationListener.java:68] - Dubbo Config was overridden by externalized configuration {dubbo.application.name=merchant-application, dubbo.application.qos-enable=false, dubbo.application.qos.port=22310, dubbo.config.multiple=true, dubbo.consumer.check=false, dubbo.consumer.retries=-1, dubbo.consumer.timeout=3000, dubbo.protocol.name=dubbo, dubbo.protocol.port=20891, dubbo.registry.address=nacos://127.0.0.1:8848, dubbo.scan.base-packages=com.shanjupay}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,298 [32mINFO[m [main][PostProcessorRegistrationDelegate.java:330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$36763d35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,341 [32mINFO[m [pool-3-thread-1][AwaitingNonWebApplicationListener.java:140] -  [Dubbo] Current Spring Boot Application is await...
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,364 [32mINFO[m [main][OverrideDubboConfigApplicationListener.java:68] - Dubbo Config was overridden by externalized configuration {dubbo.application.name=merchant-application, dubbo.application.qos-enable=false, dubbo.application.qos.port=22310, dubbo.config.multiple=true, dubbo.consumer.check=false, dubbo.consumer.retries=-1, dubbo.consumer.timeout=3000, dubbo.protocol.name=dubbo, dubbo.protocol.port=20891, dubbo.registry.address=nacos://127.0.0.1:8848, dubbo.scan.base-packages=com.shanjupay}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,519 [32mINFO[m [main][NacosPropertySourceBuilder.java:87] - Loading nacos data, dataId: 'spring-boot-http.yaml', group: 'COMMON_GROUP'
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,531 [32mINFO[m [main][NacosPropertySourceBuilder.java:87] - Loading nacos data, dataId: 'merchant-application.yaml', group: 'SHANJUPAY_GROUP'
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,532 [32mINFO[m [main][PropertySourceBootstrapConfiguration.java:98] - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='merchant-application.yaml'}, NacosPropertySource {name='spring-boot-http.yaml'}]}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,557 [32mINFO[m [main][SpringApplication.java:675] - No active profile set, falling back to default profiles: default
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,576 [32mINFO[m [main][StartupInfoLogger.java:59] - Started RestTemplateTest in 0.742 seconds (JVM running for 1.444)
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,586 [1;31mERROR[m [main][TestContextManager.java:250] - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7e057f43] to prepare test instance [RestTemplateTest@5b56b654]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'RestTemplateTest': Unsatisfied dependency expressed through field 'restTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:391)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1654)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1213)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 28 more
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:47:54,593 [32mINFO[m [Thread-5][AwaitingNonWebApplicationListener.java:155] -  [Dubbo] Current Spring Boot Application is about to shutdown...
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,249 [32mINFO[m [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [RestTemplateTest], using SpringBootContextLoader
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,257 [32mINFO[m [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [RestTemplateTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,331 [32mINFO[m [main][AbstractTestContextBootstrapper.java:248] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,337 [32mINFO[m [main][AbstractTestContextBootstrapper.java:177] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cecf639, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1caa0244, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7ce026d3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7ce69770, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1750fbeb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5b247367, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@268f106e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6e9a5ed8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7e057f43, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6c284af]
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,483 [32mINFO[m [main][:] - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,486 [32mINFO[m [main][WelcomeLogoApplicationListener.java:63] - 
+
+ :: Dubbo Spring Boot (v2.7.1) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.7.3) : https://github.com/apache/incubator-dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,489 [32mINFO[m [main][OverrideDubboConfigApplicationListener.java:68] - Dubbo Config was overridden by externalized configuration {dubbo.application.name=merchant-application, dubbo.application.qos-enable=false, dubbo.application.qos.port=22310, dubbo.config.multiple=true, dubbo.consumer.check=false, dubbo.consumer.retries=-1, dubbo.consumer.timeout=3000, dubbo.protocol.name=dubbo, dubbo.protocol.port=20891, dubbo.registry.address=nacos://127.0.0.1:8848, dubbo.scan.base-packages=com.shanjupay}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,818 [32mINFO[m [main][PostProcessorRegistrationDelegate.java:330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fc45882d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,868 [32mINFO[m [pool-3-thread-1][AwaitingNonWebApplicationListener.java:140] -  [Dubbo] Current Spring Boot Application is await...
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,891 [32mINFO[m [main][OverrideDubboConfigApplicationListener.java:68] - Dubbo Config was overridden by externalized configuration {dubbo.application.name=merchant-application, dubbo.application.qos-enable=false, dubbo.application.qos.port=22310, dubbo.config.multiple=true, dubbo.consumer.check=false, dubbo.consumer.retries=-1, dubbo.consumer.timeout=3000, dubbo.protocol.name=dubbo, dubbo.protocol.port=20891, dubbo.registry.address=nacos://127.0.0.1:8848, dubbo.scan.base-packages=com.shanjupay}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,985 [32mINFO[m [main][NacosPropertySourceBuilder.java:87] - Loading nacos data, dataId: 'spring-boot-http.yaml', group: 'COMMON_GROUP'
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,991 [32mINFO[m [main][NacosPropertySourceBuilder.java:87] - Loading nacos data, dataId: 'merchant-application.yaml', group: 'SHANJUPAY_GROUP'
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:20,992 [32mINFO[m [main][PropertySourceBootstrapConfiguration.java:98] - Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='merchant-application.yaml'}, NacosPropertySource {name='spring-boot-http.yaml'}]}
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:21,010 [32mINFO[m [main][SpringApplication.java:675] - No active profile set, falling back to default profiles: default
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:21,189 [32mINFO[m [main][StartupInfoLogger.java:59] - Started RestTemplateTest in 0.816 seconds (JVM running for 1.475)
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:21,201 [1;31mERROR[m [main][TestContextManager.java:250] - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7ce69770] to prepare test instance [RestTemplateTest@29006752]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'RestTemplateTest': Unsatisfied dependency expressed through field 'restTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:391)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1654)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1213)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 28 more
+[${project.name}][${env:SERVER_PORT}] 2021-11-01 09:48:21,208 [32mINFO[m [Thread-5][AwaitingNonWebApplicationListener.java:155] -  [Dubbo] Current Spring Boot Application is about to shutdown...

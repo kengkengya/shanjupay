@@ -1,0 +1,1231 @@
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:41:50,658 [1;31mERROR[m [main][TomcatStarter.java:62] - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:41:50,687 [1;31mERROR[m [main][LoggingFailureAnalysisReporter.java:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:15,466 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:15,468 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:15,973 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:16,479 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:16,982 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:17,490 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:17,993 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:18,497 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:19,003 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:19,510 [1;31mERROR[m [Druid-ConnectionPool-Create-1970518510][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://localhost:3306/填自己的数据库?useUnicode=true&characterEncoding=UTF-8&useSSL=false, errorCode 0, state 08001
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:52,635 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:52,637 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:53,141 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:53,650 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:54,157 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:54,663 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:43:55,167 [1;31mERROR[m [Druid-ConnectionPool-Create-933293116][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:46:18,428 [1;31mERROR[m [main][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy134.getServiceRestMetadata(Unknown Source)
+	at com.alibaba.cloud.dubbo.metadata.repository.DubboServiceMetadataRepository.getServiceRestMetadataSet(DubboServiceMetadataRepository.java:591)
+	at com.alibaba.cloud.dubbo.metadata.repository.DubboServiceMetadataRepository.initDubboRestServiceMetadataRepository(DubboServiceMetadataRepository.java:479)
+	at com.alibaba.cloud.dubbo.metadata.repository.DubboServiceMetadataRepository.initializeMetadata(DubboServiceMetadataRepository.java:287)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:228)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.lambda$doSubscribeDubboServiceURLs$0(AbstractSpringCloudRegistry.java:204)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1082)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.doSubscribeDubboServiceURLs(AbstractSpringCloudRegistry.java:204)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURLs(AbstractSpringCloudRegistry.java:169)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.doSubscribe(AbstractSpringCloudRegistry.java:163)
+	at org.apache.dubbo.registry.support.FailbackRegistry.subscribe(FailbackRegistry.java:295)
+	at org.apache.dubbo.registry.integration.RegistryDirectory.subscribe(RegistryDirectory.java:172)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.doRefer(RegistryProtocol.java:411)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.refer(RegistryProtocol.java:392)
+	at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:128)
+	at org.apache.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:69)
+	at org.apache.dubbo.qos.protocol.QosProtocolWrapper.refer(QosProtocolWrapper.java:70)
+	at org.apache.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at org.apache.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:401)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:329)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:250)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor$ReferenceBeanInvocationHandler.init(ReferenceAnnotationBeanPostProcessor.java:269)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor$ReferenceBeanInvocationHandler.access$100(ReferenceAnnotationBeanPostProcessor.java:242)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.buildInvocationHandler(ReferenceAnnotationBeanPostProcessor.java:236)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.buildProxy(ReferenceAnnotationBeanPostProcessor.java:219)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:134)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor.getInjectedObject(AnnotationInjectedBeanPostProcessor.java:360)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor$AnnotatedFieldElement.inject(AnnotationInjectedBeanPostProcessor.java:540)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor.postProcessPropertyValues(AnnotationInjectedBeanPostProcessor.java:147)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1400)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantApplicationBootstrap.main(MerchantApplicationBootstrap.java:13)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:46:18,428 [1;31mERROR[m [main][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy134.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.lambda$doSubscribeDubboServiceURLs$0(AbstractSpringCloudRegistry.java:204)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1082)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.doSubscribeDubboServiceURLs(AbstractSpringCloudRegistry.java:204)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURLs(AbstractSpringCloudRegistry.java:169)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.doSubscribe(AbstractSpringCloudRegistry.java:163)
+	at org.apache.dubbo.registry.support.FailbackRegistry.subscribe(FailbackRegistry.java:295)
+	at org.apache.dubbo.registry.integration.RegistryDirectory.subscribe(RegistryDirectory.java:172)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.doRefer(RegistryProtocol.java:411)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.refer(RegistryProtocol.java:392)
+	at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:128)
+	at org.apache.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:69)
+	at org.apache.dubbo.qos.protocol.QosProtocolWrapper.refer(QosProtocolWrapper.java:70)
+	at org.apache.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at org.apache.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:401)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:329)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:250)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor$ReferenceBeanInvocationHandler.init(ReferenceAnnotationBeanPostProcessor.java:269)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor$ReferenceBeanInvocationHandler.access$100(ReferenceAnnotationBeanPostProcessor.java:242)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.buildInvocationHandler(ReferenceAnnotationBeanPostProcessor.java:236)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.buildProxy(ReferenceAnnotationBeanPostProcessor.java:219)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:134)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor.getInjectedObject(AnnotationInjectedBeanPostProcessor.java:360)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor$AnnotatedFieldElement.inject(AnnotationInjectedBeanPostProcessor.java:540)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.AnnotationInjectedBeanPostProcessor.postProcessPropertyValues(AnnotationInjectedBeanPostProcessor.java:147)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1400)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantApplicationBootstrap.main(MerchantApplicationBootstrap.java:13)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:46:18,986 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=merchant-application&check=false&dubbo=2.0.2&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&pid=5292&qos.enable=false&qos.port=22310&register.ip=192.168.31.112&release=2.7.3&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy134.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:46:21,613 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=5292&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=192.168.31.112&bind.port=20890&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=5292&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@b14b60a, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=merchant-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=5292&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=192.168.31.112&release=2.7.3&remote.application=merchant-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1635662778274&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@4cc12db2]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy134.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:50:55,623 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:50:57,021 [1;31mERROR[m [main][TomcatStarter.java:62] - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:50:57,050 [1;31mERROR[m [main][LoggingFailureAnalysisReporter.java:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:22,260 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:23,906 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:23,907 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:24,413 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:24,920 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:25,427 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:25,933 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:26,442 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:26,945 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:53:27,452 [1;31mERROR[m [Druid-ConnectionPool-Create-1296450832][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?useUnicode=true&characterEncoding=UTF‐8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 0, state S1009
+java.sql.SQLException: Unsupported character encoding 'UTF‐8'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:85)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:440)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+Caused by: com.mysql.cj.exceptions.WrongArgumentException: Unsupported character encoding 'UTF‐8'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:287)
+	at com.mysql.cj.jdbc.JdbcPropertySetImpl.postInitialization(JdbcPropertySetImpl.java:75)
+	at com.mysql.cj.conf.DefaultPropertySet.initializeProperties(DefaultPropertySet.java:206)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:382)
+	... 5 more
+Caused by: java.io.UnsupportedEncodingException: UTF‐8
+	at java.lang.StringCoding.encode(StringCoding.java:341)
+	at java.lang.String.getBytes(String.java:918)
+	at com.mysql.cj.util.StringUtils.getBytes(StringUtils.java:285)
+	... 8 more
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:54:44,608 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:55:00,706 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:55:01,968 [1;31mERROR[m [main][TomcatStarter.java:62] - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:55:01,996 [1;31mERROR[m [main][LoggingFailureAnalysisReporter.java:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:58:58,229 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:58:59,515 [1;31mERROR[m [main][TomcatStarter.java:62] - Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 14:58:59,541 [1;31mERROR[m [main][LoggingFailureAnalysisReporter.java:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+

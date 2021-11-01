@@ -1,0 +1,845 @@
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:33,842 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:35,514 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:35,515 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:36,020 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:36,529 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:37,036 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:37,544 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:38,051 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:02:38,554 [1;31mERROR[m [Druid-ConnectionPool-Create-622609024][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:44,784 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:46,493 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:46,494 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:47,000 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:47,510 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:48,021 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:48,528 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:49,032 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:49,539 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:04:50,046 [1;31mERROR[m [Druid-ConnectionPool-Create-2101493838][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:28,877 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:30,545 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:30,546 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:31,055 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:31,565 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:32,072 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:32,580 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:33,087 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:07:33,593 [1;31mERROR[m [Druid-ConnectionPool-Create-1947201478][DruidDataSource.java:2603] - create connection SQLException, url: jdbc:mysql://127.0.0.1:3306/shanjupay_merchant_service?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true, errorCode 1045, state 28000
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:862)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1596)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1662)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2601)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:08:13,209 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1,192.168.163.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:08:46,312 [1;31mERROR[m [com.alibaba.nacos.client.Worker.longPolling.fixed-127.0.0.1_8848-a0f586ee-df78-43b2-bb03-698bfb598ce8][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:173)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:139)
+	at org.springframework.cloud.context.refresh.ContextRefresher.addConfigFilesToEnvironment(ContextRefresher.java:96)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refreshEnvironment(ContextRefresher.java:76)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refresh(ContextRefresher.java:68)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.handle(RefreshEventListener.java:50)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.onApplicationEvent(RefreshEventListener.java:39)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.nacos.refresh.NacosContextRefresher$1.receiveConfigInfo(NacosContextRefresher.java:125)
+	at com.alibaba.nacos.client.config.impl.CacheData$1.run(CacheData.java:190)
+	at com.alibaba.nacos.client.config.impl.CacheData.safeNotifyListener(CacheData.java:211)
+	at com.alibaba.nacos.client.config.impl.CacheData.checkListenerMd5(CacheData.java:161)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:539)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:08:55,104 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
+[${project.name}][${env:SERVER_PORT}] 2021-10-31 15:13:36,919 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.merchant.MerchantBootstrap.main(MerchantBootstrap.java:16)
