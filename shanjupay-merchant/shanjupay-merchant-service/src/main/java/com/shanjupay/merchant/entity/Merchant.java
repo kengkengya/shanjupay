@@ -7,6 +7,12 @@ import java.io.Serializable;
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+/**
+ * 商人
+ *
+ * @author guolonghang
+ * @date 2021-11-01
+ */
 @Data
 @TableName("merchant")
 public class Merchant implements Serializable {
