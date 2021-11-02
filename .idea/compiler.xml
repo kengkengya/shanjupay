@@ -29,6 +29,7 @@
       <module name="shanjupay" options="" />
       <module name="shanjupay-common" options="-parameters -bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/jce.jar" />
       <module name="shanjupay-gateway-service" options="-parameters" />
+      <module name="shanjupay-merchant" options="" />
       <module name="shanjupay-merchant-api" options="-parameters" />
       <module name="shanjupay-merchant-application" options="-parameters" />
       <module name="shanjupay-merchant-service" options="-parameters" />

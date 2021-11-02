@@ -1,6 +1,8 @@
 package com.shanjupay.merchant.service;
 
 import com.alibaba.fastjson.JSON;
+import com.shanjupay.common.domain.BusinessException;
+import com.shanjupay.common.domain.CommonErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -86,7 +88,7 @@ public class SmsServiceImpl implements SmsService {
      * @param verifiyCode verifiy代码
      */
     @Override
-    public void checkVerifiyCode(String verifiyKey, String verifiyCode) {
+    public void checkVerifiyCode(String verifiyKey, String verifiyCode) throws BusinessException {
         //实现校验验证码的逻辑
         String url = this.url + "/verify?name=sms&verificationCode=" + verifiyCode +
                 "&verificationKey=" + verifiyKey;
@@ -98,16 +100,14 @@ public class SmsServiceImpl implements SmsService {
             exchange = restTemplate.exchange(url, HttpMethod.POST, HttpEntity.EMPTY, Map.class);
             responseMap = exchange.getBody();
             log.info("校验验证码，响应内容为：{}", JSON.toJSONString(responseMap));
-        } catch (RestClientException e) {
+        } catch (Exception e) {
             log.info(e.getMessage(), e);
-            throw new RuntimeException("验证码错误");
+            throw new BusinessException(CommonErrorCode.E_100102);
         }
         //校验得到的map不为空，且校验正确
         if (responseMap == null || responseMap.get("result") == null || !(Boolean) responseMap.get("result")) {
-            throw new RuntimeException("验证码错误");
+            throw new BusinessException(CommonErrorCode.E_100102);
         }
-
-
 
 
     }

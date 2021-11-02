@@ -7,9 +7,12 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 商人dto
+ *
  * @author Administrator
  * @version 1.0
- **/
+ * @date 2021-11-02
+ */
 @ApiModel(value = "MerchantDTO", description = "商户信息")
 @Data
 public class MerchantDTO implements Serializable {

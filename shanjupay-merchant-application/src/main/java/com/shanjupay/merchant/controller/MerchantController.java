@@ -1,7 +1,12 @@
 package com.shanjupay.merchant.controller;
 
+import com.shanjupay.common.domain.BusinessException;
+import com.shanjupay.common.domain.CommonErrorCode;
+import com.shanjupay.common.util.PhoneUtil;
+import com.shanjupay.common.util.StringUtil;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
+import com.shanjupay.merchant.convert.MerchantRegisterConvert;
 import com.shanjupay.merchant.service.SmsService;
 import com.shanjupay.merchant.vo.MerchantRegisterVO;
 import io.swagger.annotations.Api;
@@ -64,17 +69,33 @@ public class MerchantController {
     }
 
     @ApiOperation("商户注册")
-    @ApiImplicitParam(name ="merchantRegister",value = "商户注册",required = true,dataType = "MerchantRegisterVO",
-    paramType = "body")
+    @ApiImplicitParam(name = "merchantRegister", value = "商户注册", required = true, dataType = "MerchantRegisterVO",
+            paramType = "body")
     @PostMapping("/merchants/register")
-    public MerchantRegisterVO registerMerchant(@RequestBody MerchantRegisterVO merchantRegister){
+    public MerchantRegisterVO registerMerchant(@RequestBody MerchantRegisterVO merchantRegister) {
+        if (merchantRegister == null) {
+            throw new BusinessException(CommonErrorCode.E_200201);
+        }
+        //判断手机号是否为空
+        if (StringUtil.isBlank(merchantRegister.getMobile())) {
+            throw new BusinessException(CommonErrorCode.E_200230);
+        }
+        //判断手机号格式是否正确
+        if (!PhoneUtil.isMatches(merchantRegister.getMobile())) {
+            throw new BusinessException(CommonErrorCode.E_200224);
+        }
+        //判断用户名是否为空
+        if (StringUtil.isBlank(merchantRegister.getUsername())) {
+            throw new BusinessException(CommonErrorCode.E_200231);
+        }
+        //判断密码是否为空
+        if (StringUtil.isBlank(merchantRegister.getPassword())) {
+            throw new BusinessException(CommonErrorCode.E_200232);
+        }
         //校验验证码
-        smsService.checkVerifiyCode(merchantRegister.getVerifiykey(),merchantRegister.getVerifiyCode());
-        //注册商户
-        MerchantDTO merchantDTO = new MerchantDTO();
-        merchantDTO.setUsername(merchantRegister.getUsername());
-        merchantDTO.setPassword(merchantRegister.getPassword());
-        merchantDTO.setMobile(merchantRegister.getMobile());
+        smsService.checkVerifiyCode(merchantRegister.getVerifiykey(), merchantRegister.getVerifiyCode());
+        //注册商户,将vo类转换成dto
+        MerchantDTO merchantDTO = MerchantRegisterConvert.instance.merchantRegisterVOToDto(merchantRegister);
         merchantService.createMerchant(merchantDTO);
         return merchantRegister;
     }

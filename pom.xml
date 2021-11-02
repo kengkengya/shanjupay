@@ -24,7 +24,7 @@
         <java.version>1.8</java.version>
 
         <org.projectlombok.version>1.18.0</org.projectlombok.version>
-        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+            <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
     </properties>
 
 
@@ -190,6 +190,7 @@
                 <version>2.1.3.RELEASE</version>
             </dependency>
 
+
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -240,6 +241,7 @@
                     <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
