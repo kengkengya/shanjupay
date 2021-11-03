@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-02T11:27:41+0800",
+    date = "2021-11-03T11:15:45+0800",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_312 (Azul Systems, Inc.)"
 )
 public class MerchantCovertImpl implements MerchantCovert {
@@ -19,6 +19,22 @@ public class MerchantCovertImpl implements MerchantCovert {
 
         MerchantDTO merchantDTO = new MerchantDTO();
 
+        merchantDTO.setId( merchant.getId() );
+        merchantDTO.setMerchantName( merchant.getMerchantName() );
+        if ( merchant.getMerchantNo() != null ) {
+            merchantDTO.setMerchantNo( String.valueOf( merchant.getMerchantNo() ) );
+        }
+        merchantDTO.setMerchantAddress( merchant.getMerchantAddress() );
+        merchantDTO.setMerchantType( merchant.getMerchantType() );
+        merchantDTO.setBusinessLicensesImg( merchant.getBusinessLicensesImg() );
+        merchantDTO.setIdCardFrontImg( merchant.getIdCardFrontImg() );
+        merchantDTO.setIdCardAfterImg( merchant.getIdCardAfterImg() );
+        merchantDTO.setUsername( merchant.getUsername() );
+        merchantDTO.setMobile( merchant.getMobile() );
+        merchantDTO.setContactsAddress( merchant.getContactsAddress() );
+        merchantDTO.setAuditStatus( merchant.getAuditStatus() );
+        merchantDTO.setTenantId( merchant.getTenantId() );
+
         return merchantDTO;
     }
 
@@ -29,6 +45,22 @@ public class MerchantCovertImpl implements MerchantCovert {
         }
 
         Merchant merchant = new Merchant();
+
+        merchant.setId( merchantDTO.getId() );
+        merchant.setMerchantName( merchantDTO.getMerchantName() );
+        if ( merchantDTO.getMerchantNo() != null ) {
+            merchant.setMerchantNo( Long.parseLong( merchantDTO.getMerchantNo() ) );
+        }
+        merchant.setMerchantAddress( merchantDTO.getMerchantAddress() );
+        merchant.setMerchantType( merchantDTO.getMerchantType() );
+        merchant.setBusinessLicensesImg( merchantDTO.getBusinessLicensesImg() );
+        merchant.setIdCardFrontImg( merchantDTO.getIdCardFrontImg() );
+        merchant.setIdCardAfterImg( merchantDTO.getIdCardAfterImg() );
+        merchant.setUsername( merchantDTO.getUsername() );
+        merchant.setMobile( merchantDTO.getMobile() );
+        merchant.setContactsAddress( merchantDTO.getContactsAddress() );
+        merchant.setAuditStatus( merchantDTO.getAuditStatus() );
+        merchant.setTenantId( merchantDTO.getTenantId() );
 
         return merchant;
     }

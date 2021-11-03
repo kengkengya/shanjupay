@@ -27,4 +27,12 @@ public interface MerchantService {
      * @return {@code MerchantDTO}
      */
     MerchantDTO createMerchant(MerchantDTO merchantDTO);
+
+    /**
+     * 商户资质申请
+     *
+     * @param merchantId  商人id
+     * @param merchantDTO 商人dto
+     */
+    void applyMerchant(Long merchantId,MerchantDTO merchantDTO);
 }

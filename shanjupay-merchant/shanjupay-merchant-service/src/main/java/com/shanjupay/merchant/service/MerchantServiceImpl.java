@@ -1,6 +1,7 @@
 package com.shanjupay.merchant.service;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.extension.api.R;
 import com.shanjupay.common.domain.BusinessException;
 import com.shanjupay.common.domain.CommonErrorCode;
 import com.shanjupay.common.util.PhoneUtil;
@@ -51,7 +52,7 @@ public class MerchantServiceImpl implements MerchantService {
      * @return {@code MerchantDTO}
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = BusinessException.class)
     public MerchantDTO createMerchant(MerchantDTO merchantDTO) throws BusinessException {
         if (merchantDTO == null) {
             throw new BusinessException(CommonErrorCode.E_200201);
@@ -88,5 +89,45 @@ public class MerchantServiceImpl implements MerchantService {
         MerchantDTO merchantDTONew = MerchantCovert.instance.entityToDto(entity);
 
         return merchantDTONew;
+    }
+
+    /**
+     * 商户资质申请
+     *
+     * @param merchantId  商人id
+     * @param merchantDTO 商人dto
+     * @throws BusinessException 业务异常
+     */
+    @Override
+    @Transactional(rollbackFor = BusinessException.class)
+    public void applyMerchant(Long merchantId, MerchantDTO merchantDTO) throws BusinessException {
+
+        //接收商户资质，注册到商户表中
+        if (null == merchantId || null == merchantDTO) {
+            throw new BusinessException(CommonErrorCode.E_200201);
+        }
+        //根据商户ID查询商户
+        Merchant merchant = null;
+        try {
+            merchant = merchantMapper.selectById(merchantId);
+            log.info("根据商户ID查询商户merchant:{}",merchant);
+        } catch (Exception e) {
+            throw new BusinessException(CommonErrorCode.E_200227);
+        }
+        //数据流转换
+        Merchant merchantNew = MerchantCovert.instance.dtoToEntity(merchantDTO);
+        //正在审核中
+        merchantNew.setAuditStatus("1");
+        //租户id
+        merchantNew.setTenantId(merchant.getTenantId());
+        merchantNew.setId(merchantId);
+
+        try {
+            int i = merchantMapper.updateById(merchantNew);
+            log.info("已更新 {} 条",i);
+        } catch (Exception e) {
+            throw new RuntimeException("更新商户出错");
+        }
+
     }
 }
