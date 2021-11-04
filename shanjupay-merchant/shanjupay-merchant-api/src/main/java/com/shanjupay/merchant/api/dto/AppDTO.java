@@ -10,20 +10,24 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+/**
+ * 应用dto
+ *
+ * @author guolonghang
+ * @date 2021-11-04
+ */
 @Data
-@ApiModel(value="AppDTO", description="")
+@ApiModel(value="AppDTO", description="应用信息")
 public class AppDTO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
-    private Long id;
-
+    @ApiModelProperty("应用id，新增时无需传入")
     private String appId;
 
     @ApiModelProperty(value = "商店名称")
     private String appName;
 
-    @ApiModelProperty(value = "所属商户")
+    @ApiModelProperty(value = "商户ID")
     private Long merchantId;
 
     @ApiModelProperty(value = "应用公钥(RSAWithSHA256)")

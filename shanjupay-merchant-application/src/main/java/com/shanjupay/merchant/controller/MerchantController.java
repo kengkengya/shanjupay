@@ -5,7 +5,9 @@ import com.shanjupay.common.domain.BusinessException;
 import com.shanjupay.common.domain.CommonErrorCode;
 import com.shanjupay.common.util.PhoneUtil;
 import com.shanjupay.common.util.StringUtil;
+import com.shanjupay.merchant.api.AppService;
 import com.shanjupay.merchant.api.MerchantService;
+import com.shanjupay.merchant.api.dto.AppDTO;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
 import com.shanjupay.merchant.vo.MerchantDetailVO;
 import com.shanjupay.merchant.common.util.SecurityUtil;
@@ -24,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.sql.BatchUpdateException;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -40,6 +43,9 @@ public class MerchantController {
      */
     @org.apache.dubbo.config.annotation.Reference
     MerchantService merchantService;
+
+    @org.apache.dubbo.config.annotation.Reference
+    AppService appService;
 
     /**
      * 将本地的bean进行注入
@@ -134,7 +140,7 @@ public class MerchantController {
 
     @ApiOperation("商户资质申请")
     @ApiImplicitParam(name = "saveMerchant", value = "商户资质申请", required = true, dataType = "MerchantDetailVO", paramType = "body")
-    @PostMapping("/my/merchant/save")
+    @PostMapping("/my/merchants/save")
     public void saveMerchant(@RequestBody MerchantDetailVO merchantDetailVO) throws BusinessException {
 
         if (null == merchantDetailVO) {
@@ -142,11 +148,27 @@ public class MerchantController {
         }
         //解析模拟token得到商户id
         Long merchantId = SecurityUtil.getMerchantId();
-        log.info("商户id：{}",merchantId);
+        log.info("商户id：{}", merchantId);
         log.info("merchantDetailVO:{}", JSON.toJSONString(merchantDetailVO));
         MerchantDTO merchantDTO = MerchantDetailConvert.instance.merchantVoToDto(merchantDetailVO);
         log.info("merchantDTO:{}", JSON.toJSONString(merchantDTO));
         merchantService.applyMerchant(merchantId, merchantDTO);
+    }
+
+    @ApiOperation("查找该商户下所有的apps")
+    @ApiImplicitParam(name = "queryAppByMerchant", value = "查找该商户下所有的apps", dataType = "List<AppDto>")
+    @GetMapping("/my/apps")
+    public List<AppDTO> queryAppByMerchant() {
+        Long merchantId = SecurityUtil.getMerchantId();
+        return appService.queryAppByMerchant(merchantId);
+    }
+
+    @ApiOperation("根据id查询对应的app应用")
+    @ApiImplicitParam(name = "getAppById", value = "根据id查询对应的app应用", required = true, dataType = "String", paramType = "path")
+    @GetMapping("/my/apps/{id}")
+    public AppDTO getAppById(@PathVariable String id) {
+
+        return appService.getAppById(id);
     }
 
 
