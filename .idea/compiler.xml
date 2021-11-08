@@ -9,8 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="shanjupay-merchant-api" />
         <module name="shanjupay-merchant-service" />
+        <module name="shanjupay-transaction-api" />
         <module name="shanjupay-merchant-application" />
         <module name="shanjupay-common" />
+        <module name="shanjupay-transaction-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +24,9 @@
       <module name="shanjupay-merchant-api" target="1.8" />
       <module name="shanjupay-merchant-application" target="1.8" />
       <module name="shanjupay-merchant-service" target="1.8" />
+      <module name="shanjupay-transaction" target="1.8" />
+      <module name="shanjupay-transaction-api" target="1.8" />
+      <module name="shanjupay-transaction-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +38,9 @@
       <module name="shanjupay-merchant-api" options="-parameters" />
       <module name="shanjupay-merchant-application" options="-parameters" />
       <module name="shanjupay-merchant-service" options="-parameters" />
+      <module name="shanjupay-transaction" options="" />
+      <module name="shanjupay-transaction-api" options="-parameters -bootclasspath /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/rt.jar;/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/jce.jar" />
+      <module name="shanjupay-transaction-service" options="-parameters" />
     </option>
   </component>
 </project>

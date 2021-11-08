@@ -11,11 +11,15 @@
         <option value="$PROJECT_DIR$/shanjupay-merchant/pom.xml" />
         <option value="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/pom.xml" />
         <option value="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../../资料-闪聚支付/day04资料/资料/代码/shanjupay-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/shanjupay-transaction/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/shanjupay-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../../资料-闪聚支付/day04资料/资料/代码/shanjupay-transaction/shanjupay-transaction-api/pom.xml" />
+        <option value="$PROJECT_DIR$/../../资料-闪聚支付/day04资料/资料/代码/shanjupay-transaction/shanjupay-transaction-service/pom.xml" />
       </set>
     </option>
   </component>
