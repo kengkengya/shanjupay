@@ -1,4 +1,4 @@
-[聚合支付][56050] 2021-11-10 15:58:51,800 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+[聚合支付][56050] 2021-11-09 15:26:06,547 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driver‐class‐name: com.mysql.cj.jdbc.Driver
@@ -73,7 +73,7 @@ mapping values are not allowed here
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
 	at com.shanjupay.transaction.TransactionBootstrap.main(TransactionBootstrap.java:11)
-[聚合支付][56040] 2021-11-10 15:58:53,506 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+[聚合支付][56040] 2021-11-09 15:26:10,867 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driver‐class‐name: com.mysql.cj.jdbc.Driver

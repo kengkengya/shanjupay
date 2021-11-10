@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-03T11:15:45+0800",
+    date = "2021-11-09T15:26:07+0800",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_312 (Azul Systems, Inc.)"
 )
 public class MerchantCovertImpl implements MerchantCovert {

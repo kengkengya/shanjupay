@@ -10,6 +10,12 @@ import org.springframework.stereotype.Service;
 import java.sql.BatchUpdateException;
 
 
+/**
+ * 文件服务impl
+ *
+ * @author guolonghang
+ * @date 2021-11-09
+ */
 @Slf4j
 @Service
 public class FileServiceImpl implements FileService {
@@ -37,11 +43,11 @@ public class FileServiceImpl implements FileService {
     private  String bucket;
 
     @Override
-    public String upload(byte[] bytes, String fileName) throws BatchUpdateException {
+    public String upload(byte[] bytes, String fileName) throws BusinessException{
         try {
             QiniuUtils.upload2Qiniu(accessKey,secretKey,bucket,bytes,fileName);
         } catch (Exception e) {
-            throw new BusinessException(CommonErrorCode.E_100106);
+            throw new BusinessException(CommonErrorCode.E_200201);
         }
         return url+fileName;
     }

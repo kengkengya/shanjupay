@@ -1,0 +1,225 @@
+[聚合支付][57010] 2021-11-08 12:16:00,995 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[聚合支付][57010] 2021-11-08 12:16:01,001 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[聚合支付][57010] 2021-11-08 12:16:01,001 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=3647&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@74eec640, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=3647&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636341218257&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@bfe47a8]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[聚合支付][56050] 2021-11-08 12:26:27,172 [1;31mERROR[m [main][NacosPropertySourceBuilder.java:109] - parse data from Nacos error,dataId:spring-boot-starter-druid.yaml,data:spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver‐class‐name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/oauth?useUnicode=true
+        username: root
+        password: yourpassword
+        druid: 
+            initial‐size: 5
+            min‐idle: 5
+            max‐active: 20
+            max‐wait: 60000
+            time‐between‐eviction‐runs‐millis: 60000
+            min‐evictable‐idle‐time‐millis: 300000
+            validation‐query: SELECT 1 FROM DUAL
+            test‐while‐idle: true
+            test‐on‐borrow: true
+            test‐on‐return: false
+            pool‐prepared‐statements: true
+            max‐pool‐prepared‐statement‐per‐connection‐size: 20
+            filter:
+                stat:
+                slow‐sql‐millis: 1
+                log‐slow‐sql: true
+            filters: config,stat,wall,log4j2
+            web‐stat‐filter:
+                enabled: true
+                url‐pattern: /*
+                exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+                session‐stat‐enable: false
+                session‐stat‐max‐count: 1000
+                principal‐cookie‐name: admin
+                principal‐session‐name: admin
+                profile‐enable: true
+            stat‐view‐servlet:
+                enabled: true
+                url‐pattern: /druid/*
+                allow: 127.0.0.1
+                deny: 192.168.1.73
+                reset‐enable: false
+                login‐password: admin
+                login‐username: admin
+            aop‐patterns: com.shanjupay.*.service.*,
+mapping values are not allowed here
+ in 'reader', line 8, column 14:
+            druid: 
+                 ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchValue(ScannerImpl.java:870)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:358)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.createProperties(YamlPropertiesFactoryBean.java:135)
+	at org.springframework.beans.factory.config.YamlPropertiesFactoryBean.getObject(YamlPropertiesFactoryBean.java:115)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:100)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:75)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:179)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:87)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:94)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.shanjupay.transaction.TransactionBootstrap.main(TransactionBootstrap.java:11)
+[聚合支付][57010] 2021-11-08 12:26:31,515 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[聚合支付][57010] 2021-11-08 12:26:31,516 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[聚合支付][57010] 2021-11-08 12:26:31,516 [1;31mERROR[m [com.alibaba.nacos.naming.client.listener][DubboMetadataServiceInvocationHandler.java:54] - No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+org.apache.dubbo.rpc.RpcException: No provider available in [invoker :interface org.apache.dubbo.rpc.service.GenericService -> spring-cloud://localhost:9090/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&bind.ip=10.18.19.38&bind.port=20893&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=4724&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@42cc5460, invoker :interface org.apache.dubbo.rpc.service.GenericService -> nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?anyhost=true&application=merchant-application&category=providers&check=false&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=transaction-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&lazy=false&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&path=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=4724&protocol=dubbo&qos.enable=false&qos.port=22310&register=true&register.ip=10.18.19.38&release=2.7.3&remote.application=transaction-service&retries=-1&revision=2.1.0.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1636345502756&version=1.0.0,directory: org.apache.dubbo.registry.integration.RegistryDirectory@205159dc]
+	at org.apache.dubbo.rpc.cluster.support.RegistryAwareClusterInvoker.doInvoke(RegistryAwareClusterInvoker.java:59)
+	at org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:248)
+	at org.apache.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:78)
+	at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:55)
+	at org.apache.dubbo.common.bytecode.proxy0.$invoke(proxy0.java)
+	at com.alibaba.cloud.dubbo.service.DubboMetadataServiceInvocationHandler.invoke(DubboMetadataServiceInvocationHandler.java:49)
+	at com.sun.proxy.$Proxy143.getExportedURLs(Unknown Source)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.getExportedURLs(AbstractSpringCloudRegistry.java:328)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry.subscribeDubboServiceURL(AbstractSpringCloudRegistry.java:260)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:193)
+	at com.alibaba.cloud.dubbo.registry.AbstractSpringCloudRegistry$1.onApplicationEvent(AbstractSpringCloudRegistry.java:186)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:402)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:359)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.dispatchServiceInstancesChangedEvent(DubboServiceDiscoveryAutoConfiguration.java:161)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration.access$200(DubboServiceDiscoveryAutoConfiguration.java:107)
+	at com.alibaba.cloud.dubbo.autoconfigure.DubboServiceDiscoveryAutoConfiguration$NacosConfiguration.lambda$subscribeEventListener$1(DubboServiceDiscoveryAutoConfiguration.java:541)
+	at com.alibaba.nacos.client.naming.core.EventDispatcher$Notifier.run(EventDispatcher.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
